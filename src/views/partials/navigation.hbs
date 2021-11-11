@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/public/css/styles.css">
+<script src="https://use.fontawesome.com/c260569ce0.js"></script>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!--<div class="container">-->
+        {{#if user}}
+            <a class="navbar-brand" href="/users/entrada"><i class="fa fa-home" aria-hidden="true"> Black Belt</i></a>
+                      <ul class="nav navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/vista"><i class="fa fa-image"></i> Galeria</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/users/contactos"><i class="fa fa-users"></i> Contactos</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/users/publicacion"><i class="fa fa-pencil-square-o"></i> Publicaciones</a>
+                        </li>
+                            <li class="nav-item active">
+                            <a class="nav-link" href="/users/personal"><i class="fa fa-id-card"></i> Información</a>
+                        </li>
+                            <li class="nav-item active">
+                            <a class="nav-link" href="/users/chat"><i class="fa fa-commenting"></i> Chat</a>
+                        </li>
+                 </ul>
+        {{else}}
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="fa fa-home" aria-hidden="true"> Black Belt</i></a>
+        </div>
+        {{/if}}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <!--<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>-->
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{user.name}}</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/users/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a>
+                    </div>  
+                </li>
+                {{else}}
+                
+               <div class="container">
+                    <li class="nav-item">
+                         <a  class="btn-ghost round" href="/users/signup">Registrarse</a>   
+                    </li>
+               </div>
+                
+                {{/if}}
+            </ul>
+        </div>
+    <!--</div>-->
+</nav>

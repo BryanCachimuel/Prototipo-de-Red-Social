@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Side Navigation Bar</title>
+  <link rel="stylesheet" href="/public/css/styles2.css">
+  <link rel="stylesheet" href="/public/css/maquetacion.css">
+  <script src="https://use.fontawesome.com/c260569ce0.js"></script>
+
+</head>
+
+<div class="container p-4">
+  <div id="infopersonal" class="card mx-auto">
+        <div class="card-header bg-success">
+          <h3 class="card-title text-white" align="center">
+            <i class="fa fa-commenting"></i> Chat en Linea
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="card col-md-6 mx-auto" id="nickWrap">
+            <div class="card-header">
+              <h5>Ingrese su nombre de usuario:</h5>
+            </div>
+            <p id="nickError"></p>
+            <div class="card-body">
+              <form id="nickForm">
+                <input type="text" id="nickname" onkeypress="return soloLetras(event)" autocomplete="off"
+                  class="form-control" value="{{user.name}}">
+                <button type="submit" class="btn btn-success mt-2">
+                  <i class="fa fa-paper-plane" aria-hidden="true"></i> Ingresar al Chat
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div id="contentWrap">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card">
+                  <!-- CARD HEADER-->
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                      <h3> <i class="fa fa-commenting" aria-hidden="true"></i> Chat</h3>
+                      <button class="btn btn-danger" onclick="eliminar()">
+                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+                  </div>
+
+                  <!-- CARD BODY-->
+                  <div class="chatlogs">
+                    <div id="chat" class="card-body" align="left"></div>
+                        <div id="posicion" align="right">
+                      
+                      </div> 
+                  </div>
+                  <!-- CARD FOOTER -->
+                  <form id="message-form" class="card-footer">
+                    <div class="input-group">
+                      <input type="text" id="message" autocomplete="off" class="form-control" />
+                      <div class="input-group-append">
+                        <button class="btn btn-primary">
+                          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- USERS SECTION-->
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header bg-dark text-white">
+                    <h3> <i class="fa fa-users" aria-hidden="true"></i> Usuarios</h3>
+                  </div>
+                  <div class="card-body">
+                    <div id="usernames"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+</div>
+
+</body>
+
+</html>
+

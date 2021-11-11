@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+    <script src="https://use.fontawesome.com/c260569ce0.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container p-4">
+
+        <div class="row">
+          
+
+            <div class="col-md-5">
+                <div id="cargar" class="card">
+                <div class="card-header bg-success">
+                    <h3 class="card-title text-white">
+                        <i class="fa fa-pencil-square-o"></i> Actualización de Estado
+                    </h3>
+                </div>
+                <div class="card-body">
+
+                    <p>
+
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            {{user.name}} ¿Qué estas pensando?
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+
+                            <form action="/users/newpublicacion" method="POST">
+                                <div class="form-group">
+                                    <input type="text"  onkeypress="return soloLetras(event)" autocomplete="off" name="title" class="form-control"
+                                        placeholder="Título de su publicación " autofocus />
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="description" class="form-control"
+                                        placeholder="Descripción"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-share-alt" aria-hidden="true"></i> Compartir
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+
+
+            <div class="col-md-7">
+                <div id="estados" class="card gedf-card">
+                {{#each notepublicacion}}
+                <div class="card-header ">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mr-2">
+                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                            </div>
+                            <div class="ml-2">
+                        
+                                <div class="h7 text-muted">{{title}}</div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" align="center">
+
+                    <h5 class="card-title">{{title}}</h5>
+
+
+                    <p class="card-text">
+                        {{description}}
+                    </p>
+
+                </div>
+                  <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Publicado hace:
+                            {{timeago date}}
+                        </div>
+                        <form action="/users/delete/{{_id}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button id="borrar" class="btn btn-danger btn-block btn-sm" type="submit"><i class="fa fa-trash-o"></i></button>        
+                        </form>
+                  </div>
+                {{/each}}
+            </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

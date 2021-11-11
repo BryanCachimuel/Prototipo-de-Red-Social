@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Side Navigation Bar</title>
+	<link rel="stylesheet" href="/public/css/styles2.css">
+  <link rel="stylesheet" href="/public/css/maquetacion.css">
+  <script src="https://use.fontawesome.com/c260569ce0.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+   
+    <div class="main_content">
+
+      <br>
+
+       <div id="infopersonal" class="card">
+    <div class="card-header bg-success">
+      <h3 class="card-title text-white" align="center">
+            <i class="fa fa-users"></i> Contactos de la Universidad
+        </h3>
+        </div>
+        <div class="card-body">
+           <table class="table table-hover" id="redusuarios">
+               <thead>
+                 <tr align="center">
+                   <th>Nombre</th>
+                   <th>Email</th> 
+                 </tr>
+               </thead>
+               <tbody>
+                 {{#each amigos}}
+                 <tr>
+                   <td>{{this.name}}</td>
+                   <td>{{this.email}}</td>
+                 </tr>
+                 {{/each}}
+               </tbody>
+            
+             </table>
+           </div>
+         </div>
+        </div>
+    </div>
+        
+
+      
+     
+    
+
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

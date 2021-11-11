@@ -1,0 +1,55 @@
+
+     <div class="container">
+
+      <div class="col-md-6 mx-auto">
+        <div class="card mt-5">
+          <div class="p-5">
+            <div class="text-center">
+              <h1 class="text-gray-900 mb-4"><strong>Registrarse</strong></h1>
+            </div>
+             <form class="user" action="/users/signup" method="POST">
+
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                      </div>
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" name="name"
+                        placeholder="nombre" value="{{name}}">
+                    </div>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                      </div>
+                      <input type="email" id="email" class="form-control" name="email" placeholder="email"
+                        value="{{email}}">
+                    </div>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="password" placeholder="password"
+                        value="{{password}}">
+                    </div>
+                    <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                      </div>
+                      <input type="password" class="form-control" name="confirm_password"
+                        placeholder="confirmar password" value="{{confirm_password}}">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block round">
+                      Registrarse
+                    </button>
+                    <hr>
+                  </form>
+
+                  <div class="text-center">
+                   <a href="/users/signin"> Si ya tiene una cuenta  Inicie Sessión!</a>
+                  </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>

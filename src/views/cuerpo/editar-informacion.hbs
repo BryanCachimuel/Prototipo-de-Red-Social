@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+ 
+    <link rel="stylesheet" href="/public/css/maquetacion.css">
+    <script src="https://use.fontawesome.com/c260569ce0.js"></script>
+
+</head>
+
+<body>
+
+  
+
+            <div id="editarinformacion" class="card">
+                <div class="card-header bg-success">
+                    <h3 class="card-title text-white">
+                        <i class="fa fa-pencil-square-o"></i> Editar información
+                    </h3>
+                </div>
+                <div class="card-body">
+
+                    <form action="/users/editar/{{informacionp._id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="start">Fecha de Nacimiento:</label>
+                            <div class="col-sm-4">
+                                 <input type="date" id="start" name="fechanacimiento" class="form-control" min="1950-01-01"
+                                max="2100-12-31" value="{{informacionp.fechanacimiento}}">
+                            </div>
+                       
+                             <label class="col-sm-2 col-form-label" for="start">Nacionalidad:</label>
+                            <div class="col-sm-4">
+                                <input type="text" onkeypress="return soloLetras(event)" autocomplete="off" name="nacionalidad" class="form-control"
+                                placeholder="nacionalidad" value="{{informacionp.nacionalidad}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="start">Teléfono: </label>
+                            <div class="col-sm-10">
+                                <input type="text" onkeypress="return soloNumeros(event)" autocomplete="off" name="telefono" class="form-control" placeholder="telefono"
+                                value="{{informacionp.telefono}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                             <label class="col-sm-2 col-form-label" for="start">Descripción: </label>
+                            <div class="col-sm-10">
+                                  <input type="text" onkeypress="return soloLetras(event)" autocomplete="off" name="detalles" class="form-control" placeholder="detalles"
+                                value="{{informacionp.detalles}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                           <label class="col-sm-2 col-form-label" for="start">Universidad: </label>
+                           <div class="col-sm-4">
+                                <input type="text" onkeypress="return soloLetras(event)" autocomplete="off" name="universidad" class="form-control"
+                                placeholder="universidad" value="{{informacionp.universidad}}">
+                           </div>
+                      
+                             <label class="col-sm-2 col-form-label" for="start">Carrera: </label>
+                             <div class="col-sm-4">
+                                <select name="carrera" class="form-control" id="sel1"  value="{{informacionp.carrera}}">
+                                    <option value="Sistemas Computacionales">Sistemas Computacionales</option>
+                                    <option value="Mecatronica">Mecatrónica</option>
+                                    <option value="Telecomunicaciones">Telecomonicaciones</option>
+                                    <option value="Electrónica y Redes">Electrónica y Redes</option>
+                                    <option value="Industrial">Industrial</option>
+                                    <option value="Textiles">Textiles</option>
+                                    <option value="Textiles">Electricidad</option>
+                                    <option value="Mecanica Automotriz">Mecánica Automotriz</option>
+                                </select>
+                             </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="start">Sexo: </label>
+                            <div class="col-sm-10">
+                                 <select name="sexo" class="form-control" id="sel1">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Personalizado">Personalizado</option>
+                                </select>
+                            </div>
+                       </div>
+ 
+                        <div class="form-group" align="right">
+                              <a href="/users/personal" class="btn btn-danger"><i class="fa fa-times"></i>&nbsp; Cancelar</a>    
+                            <button class="btn btn-primary" type="submit">
+                             <i class="fa fa-paper-plane-o" aria-hidden="true"></i>  Enviar
+                            </button> 
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+
+
+   
+    </div>
+
+</body>
+
+</html>

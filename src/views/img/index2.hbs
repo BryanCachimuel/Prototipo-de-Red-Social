@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+    <script src="https://use.fontawesome.com/c260569ce0.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container p-4">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div id="cargar" class="card">
+                <div class="card-header bg-success">
+                    <h3 class="card-title text-white">
+                        <i class="fa fa-camera" aria-hidden="true"></i> Sube tus Fotografias
+                    </h3>
+                </div>
+                <div class="card-body">
+ 
+                    <p>
+                         Por favor cargue sus fotografias en esta sección: 
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa fa-camera" aria-hidden="true"></i> Cargar
+                        </a>
+
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <form action="/images" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="image" class="custom-file-input" id="inputGroup"
+                                                aria-describedby="inputGroupFileAddon" required>
+                                            <label class="custom-file-label" for="inputGroupFile">Seleccione el Archivo
+
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="title" autocomplete="off" class="form-control"
+                                        placeholder="Titulo de la Imagen" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="description" rows="2" class="form-control"
+                                        placeholder="Descripcion de la Imagen" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-success">
+                                        <i class="fa fa-upload"></i> Cargar Imagen
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            </div>
+          
+
+     
+         <div class="col-md-8">
+                <div id="ver" class="card mt-2">
+                <div class="card-header bg-success text-white">
+                    <h3><i class="fa fa-image"></i> Imagenes Recientes</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {{#each images}}
+                        <div class="col-md-4">
+                            <a href="/images/{{uniqueId}}">
+                                <img src="/public/upload/{{filename}}" alt="" class="w-100 h-100 img-thumbnail">
+                            </a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+         </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

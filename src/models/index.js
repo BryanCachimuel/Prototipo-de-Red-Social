@@ -1,0 +1,9 @@
+module.exports={
+  Administrador:require('./administrador'),
+  Image:require('./image'),
+  User:require('./Users'),
+  Publicacion:require('./Publicacion'),
+  Comentario:require('./comentario'),
+  Datos:require('./datos'),
+  Chat:require('./Chat'),
+};

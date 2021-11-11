@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#contenedor{
+    width:1518px;
+    height: 1000px;
+    text-align:center;
+   
+}
+
+#contenido{
+    height: 88%;
+    background: #FFFFFF;
+}
+#footer{
+    height: 10%;
+    background: #424242;
+    /*border-radius: 1em;*/
+    margin: 0;
+}
+#right{
+    float:right;
+    width:15%;
+    height: 100%;
+    background: #024959;
+}
+#left{
+    float:left; 
+    width:15%;
+    height: 100%;
+    background:#024959 ;
+       
+}
+#center{
+    display: inline-block;
+    margin:0 auto;
+    width:85%;
+    height: 100%;
+    background: #1CD8D2;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #93EDC7, #1CD8D2);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #93EDC7, #1CD8D2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+}
+
+#panel{
+    width: 100%;
+    
+}
+
+
+
+/*Comienza desde aquí*/
+
+#bienvenida{
+    margin:0 auto;
+    width:90%; 
+}
+
+#cargar{
+    margin:0 auto;
+    width:60%; 
+}
+
+#ver{
+    margin:0 auto;
+    width:60%;
+}
+
+#verificar{
+    margin:0 auto;
+    width:60%;
+}
+
+#contacto{
+    margin:0 auto;
+    width:60%;
+}
+
+#publicacion{
+    margin:0 auto;
+    width:60%;
+}
+
+#estados{
+    margin:0 auto;
+    width:60%;  
+}
+
+#comentar{
+    margin:0 auto;
+    width:60%; 
+}
+
+#bibliografia{
+    margin:0 auto;
+    width:60%;
+}
+
+#documentos{
+    margin:0 auto;
+    width:60%;
+}
+
+#mensajeria{
+    margin:0 auto;
+    width:60%;
+}
+
+#informacion{
+    margin:0 auto;
+    width:60%;
+}
+
+#personal{
+    margin:0 auto;
+    width:60%;
+}
+
+#infopersonal{
+    margin:0 auto;
+    width:60%;
+}
+
+#editarinformacion{
+    margin:0 auto;
+    margin-top: 30px;
+    width: 47%;
+}
+
+#modal{
+    margin:0 auto;
+    width:60%; 
+}
+
+#ver{
+    margin:0 auto;
+    width:60%; 
+}
+
+#comentario{
+    color: grey
+}
+
+#nickWrap{
+    width: 60%;
+}
+
+
+
+label{
+    display: block;
+    font: 1rem 'Fira Sans',sans-serif;
+}
+
+input,
+label{
+    margin: .4rem 0;
+}
+
+#contentWrap{
+    display: none;
+}
+
+.error{
+    color:red;
+}
+
+.whisper{
+    color: gray;
+    font-style: italic;
+}
+
+th{
+    background: #024959;
+    color: white;
+    border: 1px solid black;
+    padding: 20px;
+}
+td{
+    border: 1px solid black;
+    padding: 20px; 
+}
+
+.btn-ghost{
+	position: relative;
+	display: inline-block;
+	border: 2px solid rgb(15, 119, 216);
+	padding: 6px 40px;
+	color: rgb(15, 119, 216);
+	font-weight: 700;
+	text-decoration: none;
+	background-color: transparent;
+	transition: color 0.5s, background 0.5s;
+}
+
+.btn-ghost.round{
+	border-radius: 30px;
+}
+
+.btn-ghost:hover{
+    color: white;
+    text-decoration: none;
+	background-color: rgb(15, 119, 216);
+}
+
+.chat-message{
+    width: 70%;
+    padding: 15px;
+    margin: 5px 10px 0;
+    background: rgb(28, 216, 216);
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.chatprivate{
+    width: 70%;
+    padding: 15px;
+    margin: 5px 10px 0;
+    background: #1add7c;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.chatold{
+    width: 70%;
+    padding: 15px;
+    margin: 5px 10px 0;
+    background: rgb(28, 156, 216);
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.chatlogs{
+    padding: 10px;
+    width: 100%;
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chatlogs::-webkit-scrollbar{
+    width: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(0,0,0,.1);
+}

@@ -1,5 +1,8 @@
 const helpers={};
 
+/*
+    Autenticación de usuarios
+*/
 helpers.isAthenticated=(req,res,next)=>{
     if(req.isAthenticated()){
         return next();

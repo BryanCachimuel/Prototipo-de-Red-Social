@@ -18,6 +18,10 @@ ctrl.registro=(req,res)=>{
     res.render('users/signup');
 };
 
+/*
+    Registro de Usuarios
+*/
+
 ctrl.signup=async (req,res)=>{
     const {name,email,password,confirm_password}=req.body;
     const errors=[];
@@ -48,6 +52,9 @@ ctrl.signup=async (req,res)=>{
     }  
 };
 
+/*
+    Autenticación de usuarios
+*/
 
 ctrl.autenticar=(passport.authenticate('local',{
     successRedirect:'/users/entrada',
@@ -55,14 +62,20 @@ ctrl.autenticar=(passport.authenticate('local',{
     failureFlash:true
 }));
 
+/*
+    cerrar sesión
+*/
+
 ctrl.salir=(req,res)=>{
     req.logout();
     res.redirect('/');
 };
 
 
-//metodos para las publicaciones
-//En caso de error cambiar en los metodos crearpubli y publicacionesuser cuerpo/entrada 
+/*
+    metodos para las publicaciones
+    En caso de error cambiar en los metodos crearpubli y publicacionesuser cuerpo/entrada 
+*/
 ctrl.crearpublic=(req,res)=>{
     res.render('cuerpo/publicaciones');
 };
@@ -88,6 +101,10 @@ ctrl.publicacionesuser=async(req,res)=>{
         res.redirect('/users/publicacion'); 
     }    
 };
+
+/*
+    Sessión de métodos para la parte de publicaciónes
+*/
 ctrl.notapublicada=async(req,res)=>{
     const notepublicacion=await Publicacion.find({user:req.user.id}).sort({date:-1});
     res.render('cuerpo/publicaciones',{notepublicacion});
@@ -111,6 +128,10 @@ ctrl.recuperacion=(req,res)=>{
 ctrl.datos=async(req,res)=>{
     res.render('cuerpo/datos');
 };
+
+/*
+    Sessión de métodos para agregar información de usuarios
+*/
 
 ctrl.informacion=async(req,res)=>{
     const {fechanacimiento,nacionalidad,telefono,detalles,sexo,universidad,carrera}=req.body;
@@ -154,9 +175,10 @@ ctrl.informacionpersonal=async(req,res)=>{
     res.render('cuerpo/datos',{datospersonas});
 };
 
-//En caso de error eliminar toda la informacion ingresa en ese metodo 
-//y dejar solo como un metodo normal y async
-
+/*
+    En caso de error eliminar toda la informacion ingresa en ese metodo 
+    y dejar solo como un metodo normal y async
+*/
 
  ctrl.editar=async(req,res)=>{
     const informacionp= await Datos.findById(req.params.id);
@@ -169,7 +191,7 @@ ctrl.informacionpersonal=async(req,res)=>{
     res.redirect('/users/personal');
  };
 
- /*Imagen de Perfil**/
+ /*Imagen de Perfil*/
 ctrl.entrar =async (req, res) => {
     const imagespf= await Image.find({user: req.user.id}).sort({timestamp:-1});
     res.render('cuerpo/entrada',{imagespf});

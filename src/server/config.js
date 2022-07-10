@@ -16,11 +16,7 @@ require('../controllers/passport');
 //Otras dependencias
 const methodOverride=require('method-override');
 
-//Inicalizamos
-//const app=express();
-
 const routes=require('../routes/index');
-
 
 module.exports=app=>{
 
@@ -53,8 +49,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-//Variables locales donde todas las variables pueden 
-//ser accedidas
+
+/*
+    Variables locales donde todas las variables pueden ser accedidas
+*/
 app.use((req,res,next)=>{
    res.locals.success_msg=req.flash('success_msg');
     res.locals.error_msg=req.flash('error_msg');
@@ -65,8 +63,7 @@ app.use((req,res,next)=>{
 
 //routes
 routes(app);
-//routes2(app);
-//app.use(require('../routes/img'));
+
 
 //archivos estaticos
 app.use('/public',express.static(path.join(__dirname,'../public')));

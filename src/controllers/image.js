@@ -97,24 +97,11 @@ ctrl.remove = async (req, res) => {
 };
 
 
-
 ctrl.datos=async(req,res)=>{
   const verdatos=await Datos.find({user:req.user.id}).sort({date:-1});
   res.render('cuerpo/entrada',{verdatos});
 };
 
-
-
-
-
-ctrl.perfil = (req, res) => {
-
-};
-
-
-ctrl.imagenborrar = (req, res) => {
-
-};
 
 
 module.exports = ctrl;

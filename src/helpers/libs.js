@@ -1,5 +1,8 @@
 const helpers={};
 
+/*
+    método para crear un nombre randon para las imagenes subidas al sistema
+*/
 helpers.randomNumber=()=>{
     const possible='abcdefghijklmnopqrstuvwxyz0123456789';
     let randomNumber=0;
